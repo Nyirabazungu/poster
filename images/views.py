@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse
 from .forms import ProfileForm,ProjectForm
-from .models import Project,Profile,Post
+from .models import Project,Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
@@ -12,9 +12,9 @@ def home(request):
    
     profile = Profile.objects.all()
     project = Project.objects.all()
-    post= Post.objects.all() 
+  
     
-    return render(request,'welcome.html', {"profile":profile,"project":project,"post": post})
+    return render(request,'welcome.html', {"profile":profile,"project":project})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
