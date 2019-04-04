@@ -1,0 +1,27 @@
+{% block content %}
+
+ <body>
+
+ <div class="container">
+
+        <div class="row" style="color:rgb(108, 122, 122);font-family: monospace;">
+                <h1 class="text-center" class="well">{{project.name}}</h1>
+                <br>
+                <h3 class="text-center">Name:<strong>{{project.image}}</strong></h3>
+                <h3 class="text-center">Name:<strong>{{project.title}}</strong></h3>
+            </div>
+
+    <div class="row">
+        <img src="{{project.project.url}}"  class="img-responsive" alt="">
+    </div>
+    
+       
+    <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
+        <h4 ><strong>Caption: {{project.detail}}</strong></h4>
+    </div>
+   
+
+        
+       
+{% endblock %}
+</body>

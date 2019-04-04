@@ -1,0 +1,102 @@
+{%extends 'all-images/base.html'%}
+{% block content %} 
+{{ block.super}}
+
+<div class="container">
+
+<body style="color:purple">
+    <div class = "container">
+      <div class="well">
+         <h1>Welcome to Project</h1>
+         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Project</button>
+         <div id="demo" class="collapse">
+         
+         </div> 
+      </div>
+   
+ {% for images_item in project %}
+
+  <!-- <div class="row"> -->
+   
+    <div class="col-xs-4 col-sm-6 col-md-4 col-lg-6">
+       
+      
+      <a data-toggle="modal" data-target="#{{images_item.id}}">
+        <img src="{{images_item.image.url}}" alt="Image" width='400' length='600'>
+        <hr>
+    </a>
+       <div id="{{images_item.id}}" class="modal fade" role="dialog" style="background-color:bisque;color:rgb(47, 61, 61);font-family: monospace;">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h3 style="color:rgb(168, 105, 105);"><em>{{images_item.id}}</em></h3>
+                      <h4 class="modal-title"><strong>{{images_item.title}}</strong></h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{images_item.image.url}}" alt="Image" width='400' length='600'>
+                      <p><strong><em>{{images_item.detail}}</em></strong></p>
+                      <br>
+                    
+                    </div>      
+                    <a href="{{images_item.link}}">Link:{{images_item.link}}</a>
+                    <div class="modal-footer">
+
+   
+                      <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:rgb(168, 105, 105);color:white;">Close</button>
+                      
+                    </div>
+
+
+                  </div>
+                
+                  <a href="{{post_item.like}}?vote=1">
+                     <div class="fa fa-star-o"></div> {{ post.likes }} 
+                   </a>
+                   <br>
+                 
+                 
+                        
+                   <button class="btn btn-outline-succes" onclick="submit('{{ post.post }}')">Like</button>
+   
+
+                  <!-- <div class="modal-footer"> -->
+
+
+                 
+                  
+             
+
+                  
+            
+          <!-- </div>
+          <script type="text/javascript">
+            function copyUrl(element){
+              var myVar = document.getElementById(element);
+              myVar.select();
+              document.execCommand('copy');
+              alert("Copied the link of project: " + myVar.value);  
+            }
+          </script>
+                </div> -->
+            </div>
+    
+      </div>
+  
+
+  </div> 
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
+               
+
+
+
+               
+
+
