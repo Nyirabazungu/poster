@@ -38,12 +38,13 @@
                     <div class="modal-body">
                         <img src="{{images_item.image.url}}" alt="Image" width='400' length='600'>
                       <p><strong><em>{{images_item.detail}}</em></strong></p>
+                      
                       <br>
                     
                     </div>      
-                    <a href="{{images_item.link}}">Link:{{images_item.link}}</a>
+                    <h4>More info:</h4><a href="{{images_item.link}}">{{images_item.link}}</a>
                     <div class="modal-footer">
-
+                     <p><strong>Posted <em>{{images_item.poster}}</em></strong></p>
    
                       <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:rgb(168, 105, 105);color:white;">Close</button>
                       
@@ -52,8 +53,8 @@
 
                   </div>
                 
-                  <a href="{{post_item.like}}?vote=1">
-                     <div class="fa fa-star-o"></div> {{ post.likes }} 
+                  <a href="{{images_item.like}}?vote=1">
+                     <div class="fa fa-star-o"></div> {{ images_item.like}} 
                    </a>
                    <br>
                  
