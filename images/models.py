@@ -71,6 +71,11 @@ class Project(models.Model):
     def delete_project(self):
         self.delete()   
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        project = cls.objects.filter(title__icontains=search_term)
+        return project       
+
 class Post(models.Model):
       user = models.ForeignKey(User,on_delete=models.CASCADE) 
       likes = models.IntegerField(default=0)
