@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'profapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'poster',
+        'NAME': 'posters',
         'USER': 'wecode',
     'PASSWORD':'Rutagarama',
     }
