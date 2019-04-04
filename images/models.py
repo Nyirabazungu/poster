@@ -50,6 +50,7 @@ class Project(models.Model):
     detail= models.TextField()
     poster = models.CharField(max_length=30)
     link= models.TextField()
+    
   
    
    
@@ -76,10 +77,8 @@ class Project(models.Model):
         project = cls.objects.filter(title__icontains=search_term)
         return project       
 
-class Post(models.Model):
-      user = models.ForeignKey(User,on_delete=models.CASCADE) 
-      likes = models.IntegerField(default=0)
-      post = models.TextField()
- 
 
+    
+       
 
+    
