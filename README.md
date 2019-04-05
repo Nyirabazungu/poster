@@ -2,7 +2,7 @@
     Valentine Nyirabazungu
 
 ## project 
-    proster
+    poster
 
 ##Installing 
 -pip install django==1.11
