@@ -79,6 +79,19 @@ class Project(models.Model):
 
 
     
-       
+class MyProfile(models.Model):
+   
+    name = models.CharField(max_length =30)
+    bio = models.CharField(max_length=300)
+    contact= models.CharField(max_length=30)
+   
 
+class MyProject(models.Model):
+  
+    title = models.CharField(max_length =70) 
+    image = models.ImageField(upload_to = 'images/')
+    detail= models.TextField()
+    poster = models.CharField(max_length=30)
+    link= models.TextField()
+   
     
