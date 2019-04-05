@@ -41,4 +41,5 @@
 ## copyright
         Copyright (c) [2019] [NYIRABAZUNGU Valentine]
     
-
+### License
+        This software Nyirabazungu/User-contact is licensed under the MIT license.
