@@ -11,6 +11,7 @@
 -pip install django-registration==2.4.1
 -pip install django-tinymce
 -pip install pillow
+-pip install djangorestframework
 
 ## description of project
  This  a web application that allows you to be in the loop about everything happening in your project. 
