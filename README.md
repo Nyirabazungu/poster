@@ -18,8 +18,8 @@
 ##  set up requirements
         1.  A running network connection to the internet.
         2.  A web browser.
-        3.  This link .https://github.com/Nyirabazungu/profi
-        4.  Install the  User-contact by cloning this repository:https://Nyirabazungu.github.io/profi/
+        3.  This link .https://github.com/Nyirabazungu/poster
+        4.  Install the  User-contact by cloning this repository:https://Nyirabazungu.github.io/poster/
         5.  Open from any linient browser.
 
 
@@ -27,13 +27,15 @@
         Enter the link into the url interface and click the prompt.
 
 ## link to live site on GitHub pages
-        https://Nyirabazungu.github.io/profi/
+        https://Nyirabazungu.github.io/poster/
 
 ## technologies used
-        HTML
-        CSS
-        Bootstrap
-        Django
+        -HTML
+        -CSS
+        -Bootstrap
+        -Django
+        -Postman
+
        
 ## copyright
         Copyright (c) [2019] [NYIRABAZUNGU Valentine]
