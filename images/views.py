@@ -1,9 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse
 from .forms import ProfileForm,ProjectForm
-from .models import Project,Profile
+from .models import Project,Profile,MyProfile,MyProject
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+from .permissions import IsAdminOrReadOnly
+from .serializer import ProfileSerializer,ProjectSerializer
 
      
 
@@ -90,3 +95,32 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-images/search.html',{"message":message})
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = MyProfile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
+        permission_classes = (IsAdminOrReadOnly,)
+    
+    def post(self, request, format=None):
+        serializers = ProfileSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_project = MyProject.objects.all()
+        serializers = ProfileSerializer(all_project, many=True)
+        return Response(serializers.data)
+        permission_classes = (IsAdminOrReadOnly,)
+    
+    def post(self, request, format=None):
+        serializers = ProfileSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)        
