@@ -9,7 +9,8 @@ urlpatterns=[
     url(r'^profil/(\d+)',views.profil,name='profil'),
     url(r'^project/', views.project, name='project'),
     url(r'^projects/(\d+)',views.projects,name ='projects'),
-     url(r'^search/', views.search_results, name='search_results')
+    url(r'^search/', views.search_results, name='search_results'),
+    url(r'^api/project/$', views.ProjectList.as_view())
   
 
 
